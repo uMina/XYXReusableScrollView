@@ -1,0 +1,399 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F470ECC1210067F4009FB1DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F470ECC0210067F4009FB1DD /* AppDelegate.swift */; };
+		F470ECC3210067F4009FB1DD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F470ECC2210067F4009FB1DD /* ViewController.swift */; };
+		F470ECC6210067F4009FB1DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F470ECC4210067F4009FB1DD /* Main.storyboard */; };
+		F470ECC8210067F5009FB1DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F470ECC7210067F5009FB1DD /* Assets.xcassets */; };
+		F470ECCB210067F5009FB1DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F470ECC9210067F5009FB1DD /* LaunchScreen.storyboard */; };
+		F470ECD421006825009FB1DD /* XYXSkimView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F470ECD321006825009FB1DD /* XYXSkimView.swift */; };
+		F470ECD621006C14009FB1DD /* DemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F470ECD521006C14009FB1DD /* DemoView.swift */; };
+		F470ECD821007D84009FB1DD /* XYXSkimViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F470ECD721007D84009FB1DD /* XYXSkimViewCellModel.swift */; };
+		F470ECDA21018036009FB1DD /* RevealServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F470ECD921018035009FB1DD /* RevealServer.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F470ECBD210067F4009FB1DD /* XYXReusableScrollViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XYXReusableScrollViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F470ECC0210067F4009FB1DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F470ECC2210067F4009FB1DD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F470ECC5210067F4009FB1DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F470ECC7210067F5009FB1DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F470ECCA210067F5009FB1DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F470ECCC210067F5009FB1DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F470ECD321006825009FB1DD /* XYXSkimView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XYXSkimView.swift; sourceTree = "<group>"; };
+		F470ECD521006C14009FB1DD /* DemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoView.swift; sourceTree = "<group>"; };
+		F470ECD721007D84009FB1DD /* XYXSkimViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XYXSkimViewCellModel.swift; sourceTree = "<group>"; };
+		F470ECD921018035009FB1DD /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RevealServer.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F470ECBA210067F4009FB1DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F470ECDA21018036009FB1DD /* RevealServer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F470ECB4210067F4009FB1DD = {
+			isa = PBXGroup;
+			children = (
+				F470ECD921018035009FB1DD /* RevealServer.framework */,
+				F470ECD221006817009FB1DD /* XYXReusableScrollView */,
+				F470ECBF210067F4009FB1DD /* XYXReusableScrollViewDemo */,
+				F470ECBE210067F4009FB1DD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F470ECBE210067F4009FB1DD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F470ECBD210067F4009FB1DD /* XYXReusableScrollViewDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F470ECBF210067F4009FB1DD /* XYXReusableScrollViewDemo */ = {
+			isa = PBXGroup;
+			children = (
+				F470ECC0210067F4009FB1DD /* AppDelegate.swift */,
+				F470ECC2210067F4009FB1DD /* ViewController.swift */,
+				F470ECD521006C14009FB1DD /* DemoView.swift */,
+				F470ECC4210067F4009FB1DD /* Main.storyboard */,
+				F470ECC7210067F5009FB1DD /* Assets.xcassets */,
+				F470ECC9210067F5009FB1DD /* LaunchScreen.storyboard */,
+				F470ECCC210067F5009FB1DD /* Info.plist */,
+			);
+			path = XYXReusableScrollViewDemo;
+			sourceTree = "<group>";
+		};
+		F470ECD221006817009FB1DD /* XYXReusableScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				F470ECD321006825009FB1DD /* XYXSkimView.swift */,
+				F470ECD721007D84009FB1DD /* XYXSkimViewCellModel.swift */,
+			);
+			name = XYXReusableScrollView;
+			path = ../XYXReusableScrollView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F470ECBC210067F4009FB1DD /* XYXReusableScrollViewDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F470ECCF210067F5009FB1DD /* Build configuration list for PBXNativeTarget "XYXReusableScrollViewDemo" */;
+			buildPhases = (
+				F470ECB9210067F4009FB1DD /* Sources */,
+				F470ECBA210067F4009FB1DD /* Frameworks */,
+				F470ECBB210067F4009FB1DD /* Resources */,
+				F470ECDB21018229009FB1DD /* Integrate Reveal Server */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = XYXReusableScrollViewDemo;
+			productName = XYXReusableScrollViewDemo;
+			productReference = F470ECBD210067F4009FB1DD /* XYXReusableScrollViewDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F470ECB5210067F4009FB1DD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = Teresa;
+				TargetAttributes = {
+					F470ECBC210067F4009FB1DD = {
+						CreatedOnToolsVersion = 9.4;
+					};
+				};
+			};
+			buildConfigurationList = F470ECB8210067F4009FB1DD /* Build configuration list for PBXProject "XYXReusableScrollViewDemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F470ECB4210067F4009FB1DD;
+			productRefGroup = F470ECBE210067F4009FB1DD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F470ECBC210067F4009FB1DD /* XYXReusableScrollViewDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F470ECBB210067F4009FB1DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F470ECCB210067F5009FB1DD /* LaunchScreen.storyboard in Resources */,
+				F470ECC8210067F5009FB1DD /* Assets.xcassets in Resources */,
+				F470ECC6210067F4009FB1DD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F470ECDB21018229009FB1DD /* Integrate Reveal Server */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Integrate Reveal Server";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export REVEAL_SERVER_FILENAME=\"RevealServer.framework\"\n\n# Update this path to point to the location of RevealServer.framework in your project.\nexport REVEAL_SERVER_PATH=\"${SRCROOT}/${REVEAL_SERVER_FILENAME}\"\n\n# If configuration is not Debug, skip this script.\n[ \"${CONFIGURATION}\" != \"Debug\" ] && exit 0\n\n# If RevealServer.framework exists at the specified path, run code signing script.\nif [ -d \"${REVEAL_SERVER_PATH}\" ]; then\n\"${REVEAL_SERVER_PATH}/Scripts/copy_and_codesign_revealserver.sh\"\nelse\necho \"Cannot find RevealServer.framework, so Reveal Server will not be started for your app.\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F470ECB9210067F4009FB1DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F470ECC3210067F4009FB1DD /* ViewController.swift in Sources */,
+				F470ECD421006825009FB1DD /* XYXSkimView.swift in Sources */,
+				F470ECC1210067F4009FB1DD /* AppDelegate.swift in Sources */,
+				F470ECD821007D84009FB1DD /* XYXSkimViewCellModel.swift in Sources */,
+				F470ECD621006C14009FB1DD /* DemoView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F470ECC4210067F4009FB1DD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F470ECC5210067F4009FB1DD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F470ECC9210067F5009FB1DD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F470ECCA210067F5009FB1DD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F470ECCD210067F5009FB1DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F470ECCE210067F5009FB1DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F470ECD0210067F5009FB1DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(SRCROOT)",
+				);
+				INFOPLIST_FILE = XYXReusableScrollViewDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-weak_framework",
+					RevealServer,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Teresa.XYXReusableScrollViewDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F470ECD1210067F5009FB1DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = XYXReusableScrollViewDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-weak_framework",
+					RevealServer,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Teresa.XYXReusableScrollViewDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F470ECB8210067F4009FB1DD /* Build configuration list for PBXProject "XYXReusableScrollViewDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F470ECCD210067F5009FB1DD /* Debug */,
+				F470ECCE210067F5009FB1DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F470ECCF210067F5009FB1DD /* Build configuration list for PBXNativeTarget "XYXReusableScrollViewDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F470ECD0210067F5009FB1DD /* Debug */,
+				F470ECD1210067F5009FB1DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F470ECB5210067F4009FB1DD /* Project object */;
+}
