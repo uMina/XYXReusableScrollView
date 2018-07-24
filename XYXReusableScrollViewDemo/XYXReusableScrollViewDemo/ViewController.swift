@@ -29,12 +29,6 @@ class ViewController: UIViewController {
         smallSkimView.dataSource = self
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 
 extension ViewController: XYXSkimViewDataSource {

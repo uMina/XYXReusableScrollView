@@ -34,6 +34,12 @@ class XYXSkimView: UIView {
         }
     }
 
+    var pagingEnabled = true{
+        didSet{
+            scrollView.isPagingEnabled = pagingEnabled
+        }
+    }
+    
     fileprivate let scrollView = UIScrollView()
     fileprivate var visibleViews:[XYXSkimViewCell] = []
     fileprivate var reusedViews:[XYXSkimViewCell] = []
@@ -58,7 +64,7 @@ class XYXSkimView: UIView {
     func baseSetting() {
         scrollView.frame = frame
         addSubview(scrollView)
-        scrollView.isPagingEnabled = true
+        scrollView.isPagingEnabled = pagingEnabled
         scrollView.showsVerticalScrollIndicator = false
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.delegate = self
