@@ -34,7 +34,7 @@ class ViewController: UIViewController {
 extension ViewController: XYXSkimViewDataSource {
     
     func numberOfRows(in skimView: XYXSkimView) -> Int {
-        return 3
+        return 5
     }
     
     func skimView(_ skimView: XYXSkimView, cellForRowAt index: Int) -> XYXSkimViewCell {
