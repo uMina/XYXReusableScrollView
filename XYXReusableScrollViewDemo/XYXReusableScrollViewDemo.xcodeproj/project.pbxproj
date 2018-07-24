@@ -14,8 +14,10 @@
 		F470ECCB210067F5009FB1DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F470ECC9210067F5009FB1DD /* LaunchScreen.storyboard */; };
 		F470ECD421006825009FB1DD /* XYXSkimView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F470ECD321006825009FB1DD /* XYXSkimView.swift */; };
 		F470ECD621006C14009FB1DD /* DemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F470ECD521006C14009FB1DD /* DemoView.swift */; };
-		F470ECD821007D84009FB1DD /* XYXSkimViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F470ECD721007D84009FB1DD /* XYXSkimViewCellModel.swift */; };
 		F470ECDA21018036009FB1DD /* RevealServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F470ECD921018035009FB1DD /* RevealServer.framework */; };
+		F4D61ABA2106FEF900E54DA8 /* XYXSkimViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D61AB92106FEF900E54DA8 /* XYXSkimViewCell.swift */; };
+		F4D61ABC210717A600E54DA8 /* SmallDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D61ABB210717A600E54DA8 /* SmallDemoView.swift */; };
+		F4D61ABE210717F700E54DA8 /* SmallDemoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4D61ABD210717F700E54DA8 /* SmallDemoView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +30,10 @@
 		F470ECCC210067F5009FB1DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F470ECD321006825009FB1DD /* XYXSkimView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XYXSkimView.swift; sourceTree = "<group>"; };
 		F470ECD521006C14009FB1DD /* DemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoView.swift; sourceTree = "<group>"; };
-		F470ECD721007D84009FB1DD /* XYXSkimViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XYXSkimViewCellModel.swift; sourceTree = "<group>"; };
 		F470ECD921018035009FB1DD /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RevealServer.framework; sourceTree = "<group>"; };
+		F4D61AB92106FEF900E54DA8 /* XYXSkimViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XYXSkimViewCell.swift; sourceTree = "<group>"; };
+		F4D61ABB210717A600E54DA8 /* SmallDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallDemoView.swift; sourceTree = "<group>"; };
+		F4D61ABD210717F700E54DA8 /* SmallDemoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SmallDemoView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,8 @@
 				F470ECC0210067F4009FB1DD /* AppDelegate.swift */,
 				F470ECC2210067F4009FB1DD /* ViewController.swift */,
 				F470ECD521006C14009FB1DD /* DemoView.swift */,
+				F4D61ABB210717A600E54DA8 /* SmallDemoView.swift */,
+				F4D61ABD210717F700E54DA8 /* SmallDemoView.xib */,
 				F470ECC4210067F4009FB1DD /* Main.storyboard */,
 				F470ECC7210067F5009FB1DD /* Assets.xcassets */,
 				F470ECC9210067F5009FB1DD /* LaunchScreen.storyboard */,
@@ -80,7 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				F470ECD321006825009FB1DD /* XYXSkimView.swift */,
-				F470ECD721007D84009FB1DD /* XYXSkimViewCellModel.swift */,
+				F4D61AB92106FEF900E54DA8 /* XYXSkimViewCell.swift */,
 			);
 			name = XYXReusableScrollView;
 			path = ../XYXReusableScrollView;
@@ -148,6 +154,7 @@
 				F470ECCB210067F5009FB1DD /* LaunchScreen.storyboard in Resources */,
 				F470ECC8210067F5009FB1DD /* Assets.xcassets in Resources */,
 				F470ECC6210067F4009FB1DD /* Main.storyboard in Resources */,
+				F4D61ABE210717F700E54DA8 /* SmallDemoView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,10 +182,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4D61ABA2106FEF900E54DA8 /* XYXSkimViewCell.swift in Sources */,
 				F470ECC3210067F4009FB1DD /* ViewController.swift in Sources */,
 				F470ECD421006825009FB1DD /* XYXSkimView.swift in Sources */,
+				F4D61ABC210717A600E54DA8 /* SmallDemoView.swift in Sources */,
 				F470ECC1210067F4009FB1DD /* AppDelegate.swift in Sources */,
-				F470ECD821007D84009FB1DD /* XYXSkimViewCellModel.swift in Sources */,
 				F470ECD621006C14009FB1DD /* DemoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

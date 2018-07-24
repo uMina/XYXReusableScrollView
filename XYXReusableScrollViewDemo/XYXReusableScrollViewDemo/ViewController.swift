@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     let skimView = XYXSkimView()
+    let smallSkimView = XYXSkimView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,9 +19,14 @@ class ViewController: UIViewController {
         skimView.backgroundColor = UIColor.lightGray
         view.addSubview(skimView)
         
-        skimView.register(DemoView.classForCoder(), forCellReuseIdentifier: "DemoView")
+        skimView.register(DemoView.self, forCellReuseIdentifier: "DemoView")
         skimView.dataSource = self
         
+        smallSkimView.frame = CGRect(x: 0, y: 200, width: UIScreen.main.bounds.width, height: 80)
+        smallSkimView.backgroundColor = UIColor.lightGray
+        view.addSubview(smallSkimView)
+        smallSkimView.register(UINib.init(nibName: "SmallDemoView", bundle: nil), forCellReuseIdentifier: "SmallDemoView")
+        smallSkimView.dataSource = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,15 +39,26 @@ class ViewController: UIViewController {
 
 extension ViewController: XYXSkimViewDataSource {
     
-    func numberOfPages(in skimView: XYXSkimView) -> Int {
+    func numberOfRows(in skimView: XYXSkimView) -> Int {
         return 3
     }
-    func skimView(_ skimView: XYXSkimView, cellForPageAt pageIndex: Int) -> UIView {
-        var cell = skimView.dequeueReusableCell(withIdentifier: "DemoView") as? DemoView
-        if cell == nil{
-            cell = DemoView(frame: skimView.frame)
+    
+    func skimView(_ skimView: XYXSkimView, cellForRowAt index: Int) -> XYXSkimViewCell {
+        if skimView == self.skimView {
+            var cell = skimView.dequeueReusableCell(withIdentifier: "DemoView") as? DemoView
+            if cell == nil{
+                cell = DemoView.init(reuseIdentifier: "DemoView")
+            }
+            cell?.flag = index
+            return cell!
+        }else if skimView == self.smallSkimView {
+                var cell = skimView.dequeueReusableCell(withIdentifier: "SmallDemoView") as? SmallDemoView
+                if cell == nil{
+                    cell = Bundle.main.loadNibNamed("SmallDemoView", owner: nil, options: nil)?.last as? SmallDemoView
+                }
+                cell?.flag = index
+                return cell ?? XYXSkimViewCell()
         }
-        cell?.flag = pageIndex
-        return cell!
+        return XYXSkimViewCell()
     }
 }

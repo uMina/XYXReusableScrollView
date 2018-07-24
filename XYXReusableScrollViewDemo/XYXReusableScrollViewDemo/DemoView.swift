@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DemoView: UIView {
+class DemoView: XYXSkimViewCell {
     let displayLabel:UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16)
@@ -24,25 +24,18 @@ class DemoView: UIView {
         }
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    required init(reuseIdentifier: String) {
+        super.init(reuseIdentifier: reuseIdentifier)
         addSubview(displayLabel)
     }
-    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
     }
-    override func didMoveToSuperview() {
-        super.didMoveToSuperview()
-        layoutIfNeeded()
-        print("-------didMoveToSuperview()")
-    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
-        displayLabel.center = self.center
+        displayLabel.frame = CGRect(origin: CGPoint(x: 20, y: 20), size: displayLabel.frame.size)
         backgroundColor = self.randomColor()
-        print("-------layoutSubviews()")
     }
     
     func randomColor() -> UIColor {
