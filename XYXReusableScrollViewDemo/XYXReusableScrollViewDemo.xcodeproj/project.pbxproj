@@ -14,7 +14,6 @@
 		F470ECCB210067F5009FB1DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F470ECC9210067F5009FB1DD /* LaunchScreen.storyboard */; };
 		F470ECD421006825009FB1DD /* XYXSkimView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F470ECD321006825009FB1DD /* XYXSkimView.swift */; };
 		F470ECD621006C14009FB1DD /* DemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F470ECD521006C14009FB1DD /* DemoView.swift */; };
-		F470ECDA21018036009FB1DD /* RevealServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F470ECD921018035009FB1DD /* RevealServer.framework */; };
 		F4D61ABA2106FEF900E54DA8 /* XYXSkimViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D61AB92106FEF900E54DA8 /* XYXSkimViewCell.swift */; };
 		F4D61ABC210717A600E54DA8 /* SmallDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D61ABB210717A600E54DA8 /* SmallDemoView.swift */; };
 		F4D61ABE210717F700E54DA8 /* SmallDemoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4D61ABD210717F700E54DA8 /* SmallDemoView.xib */; };
@@ -30,7 +29,6 @@
 		F470ECCC210067F5009FB1DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F470ECD321006825009FB1DD /* XYXSkimView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XYXSkimView.swift; sourceTree = "<group>"; };
 		F470ECD521006C14009FB1DD /* DemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoView.swift; sourceTree = "<group>"; };
-		F470ECD921018035009FB1DD /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RevealServer.framework; sourceTree = "<group>"; };
 		F4D61AB92106FEF900E54DA8 /* XYXSkimViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XYXSkimViewCell.swift; sourceTree = "<group>"; };
 		F4D61ABB210717A600E54DA8 /* SmallDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallDemoView.swift; sourceTree = "<group>"; };
 		F4D61ABD210717F700E54DA8 /* SmallDemoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SmallDemoView.xib; sourceTree = "<group>"; };
@@ -41,7 +39,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F470ECDA21018036009FB1DD /* RevealServer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,7 +48,6 @@
 		F470ECB4210067F4009FB1DD = {
 			isa = PBXGroup;
 			children = (
-				F470ECD921018035009FB1DD /* RevealServer.framework */,
 				F470ECD221006817009FB1DD /* XYXReusableScrollView */,
 				F470ECBF210067F4009FB1DD /* XYXReusableScrollViewDemo */,
 				F470ECBE210067F4009FB1DD /* Products */,
@@ -102,7 +98,6 @@
 				F470ECB9210067F4009FB1DD /* Sources */,
 				F470ECBA210067F4009FB1DD /* Frameworks */,
 				F470ECBB210067F4009FB1DD /* Resources */,
-				F470ECDB21018229009FB1DD /* Integrate Reveal Server */,
 			);
 			buildRules = (
 			);
@@ -159,23 +154,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		F470ECDB21018229009FB1DD /* Integrate Reveal Server */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Integrate Reveal Server";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "export REVEAL_SERVER_FILENAME=\"RevealServer.framework\"\n\n# Update this path to point to the location of RevealServer.framework in your project.\nexport REVEAL_SERVER_PATH=\"${SRCROOT}/${REVEAL_SERVER_FILENAME}\"\n\n# If configuration is not Debug, skip this script.\n[ \"${CONFIGURATION}\" != \"Debug\" ] && exit 0\n\n# If RevealServer.framework exists at the specified path, run code signing script.\nif [ -d \"${REVEAL_SERVER_PATH}\" ]; then\n\"${REVEAL_SERVER_PATH}/Scripts/copy_and_codesign_revealserver.sh\"\nelse\necho \"Cannot find RevealServer.framework, so Reveal Server will not be started for your app.\"\nfi";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F470ECB9210067F4009FB1DD /* Sources */ = {
@@ -342,11 +320,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-weak_framework",
-					RevealServer,
-				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = Teresa.XYXReusableScrollViewDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -368,11 +342,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-weak_framework",
-					RevealServer,
-				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = Teresa.XYXReusableScrollViewDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
