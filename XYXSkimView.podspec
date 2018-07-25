@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
 
   s.name         = "XYXSkimView"
-  s.version      = "0.9.3"
+  s.version      = "0.9.4"
   s.summary      = "横向的、可复用的滚动视图"
   s.swift_version = "4.0"
 
