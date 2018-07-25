@@ -10,10 +10,10 @@ import UIKit
 
 open class XYXSkimViewCell: UIView {
     
-    @IBInspectable private var _reuseIdentifier:String?
+    @IBInspectable private var identifier:String?
     open var reuseIdentifier: String? {
         get{
-           return _reuseIdentifier
+           return identifier
         }
     }
     
