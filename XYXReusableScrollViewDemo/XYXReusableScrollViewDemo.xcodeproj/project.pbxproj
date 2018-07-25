@@ -49,7 +49,7 @@
 			isa = PBXGroup;
 			children = (
 				F470ECD221006817009FB1DD /* XYXSkimView */,
-				F470ECBF210067F4009FB1DD /* XYXReusableScrollViewDemo */,
+				F470ECBF210067F4009FB1DD /* Demo */,
 				F470ECBE210067F4009FB1DD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -62,7 +62,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F470ECBF210067F4009FB1DD /* XYXReusableScrollViewDemo */ = {
+		F470ECBF210067F4009FB1DD /* Demo */ = {
 			isa = PBXGroup;
 			children = (
 				F470ECC0210067F4009FB1DD /* AppDelegate.swift */,
@@ -75,7 +75,7 @@
 				F470ECC9210067F5009FB1DD /* LaunchScreen.storyboard */,
 				F470ECCC210067F5009FB1DD /* Info.plist */,
 			);
-			path = XYXReusableScrollViewDemo;
+			path = Demo;
 			sourceTree = "<group>";
 		};
 		F470ECD221006817009FB1DD /* XYXSkimView */ = {
