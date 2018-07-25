@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  XYXReusableScrollViewDemo
+//  ReusableScrollViewDemo
 //
-//  Created by Teresa on 2018/7/19.
+//  Created by Teresa on 2018/7/25.
 //  Copyright © 2018年 Teresa. All rights reserved.
 //
 

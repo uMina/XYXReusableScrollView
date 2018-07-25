@@ -1,15 +1,15 @@
 //
 //  ViewController.swift
-//  XYXReusableScrollViewDemo
+//  ReusableScrollViewDemo
 //
-//  Created by Teresa on 2018/7/19.
+//  Created by Teresa on 2018/7/25.
 //  Copyright © 2018年 Teresa. All rights reserved.
 //
 
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     let skimView = XYXSkimView()
     let smallSkimView = XYXSkimView()
     
@@ -28,7 +28,7 @@ class ViewController: UIViewController {
         smallSkimView.register(UINib.init(nibName: "SmallDemoView", bundle: nil), forCellReuseIdentifier: "SmallDemoView")
         smallSkimView.dataSource = self
     }
-
+    
 }
 
 extension ViewController: XYXSkimViewDataSource {
@@ -46,13 +46,14 @@ extension ViewController: XYXSkimViewDataSource {
             cell?.flag = index
             return cell!
         }else if skimView == self.smallSkimView {
-                var cell = skimView.dequeueReusableCell(withIdentifier: "SmallDemoView") as? SmallDemoView
-                if cell == nil{
-                    cell = Bundle.main.loadNibNamed("SmallDemoView", owner: nil, options: nil)?.last as? SmallDemoView
-                }
-                cell?.flag = index
-                return cell ?? XYXSkimViewCell()
+            var cell = skimView.dequeueReusableCell(withIdentifier: "SmallDemoView") as? SmallDemoView
+            if cell == nil{
+                cell = Bundle.main.loadNibNamed("SmallDemoView", owner: nil, options: nil)?.last as? SmallDemoView
+            }
+            cell?.flag = index
+            return cell ?? XYXSkimViewCell()
         }
         return XYXSkimViewCell()
     }
 }
+
