@@ -48,7 +48,7 @@
 		F470ECB4210067F4009FB1DD = {
 			isa = PBXGroup;
 			children = (
-				F470ECD221006817009FB1DD /* XYXReusableScrollView */,
+				F470ECD221006817009FB1DD /* XYXSkimView */,
 				F470ECBF210067F4009FB1DD /* XYXReusableScrollViewDemo */,
 				F470ECBE210067F4009FB1DD /* Products */,
 			);
@@ -78,14 +78,14 @@
 			path = XYXReusableScrollViewDemo;
 			sourceTree = "<group>";
 		};
-		F470ECD221006817009FB1DD /* XYXReusableScrollView */ = {
+		F470ECD221006817009FB1DD /* XYXSkimView */ = {
 			isa = PBXGroup;
 			children = (
 				F470ECD321006825009FB1DD /* XYXSkimView.swift */,
 				F4D61AB92106FEF900E54DA8 /* XYXSkimViewCell.swift */,
 			);
-			name = XYXReusableScrollView;
-			path = ../XYXReusableScrollView;
+			name = XYXSkimView;
+			path = ../XYXSkimView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
