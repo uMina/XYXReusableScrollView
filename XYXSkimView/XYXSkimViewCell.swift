@@ -17,7 +17,7 @@ open class XYXSkimViewCell: UIView {
         }
     }
     
-    convenience init(){
+    public convenience init(){
         self.init()
     }
     
