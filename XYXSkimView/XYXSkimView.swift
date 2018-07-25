@@ -9,32 +9,32 @@
 
 import UIKit
 
-@objc protocol XYXSkimViewDataSource {
+@objc public protocol XYXSkimViewDataSource {
     func numberOfRows(in skimView: XYXSkimView) -> Int
     func skimView(_ skimView: XYXSkimView, cellForRowAt index: Int) -> XYXSkimViewCell
     @objc optional func skimView(_ skimView: XYXSkimView, widthForRow at:Int) -> Float
 }
-protocol XYXSkimViewDelegate {
+public protocol XYXSkimViewDelegate {
     func skimViewDidScroll(_ skimView:XYXSkimView,offsetX:CGFloat)
 }
 
 
-class XYXSkimView: UIView {
+open class XYXSkimView: UIView {
     
-    var delegate:XYXSkimViewDelegate?
-    var dataSource:XYXSkimViewDataSource?{
+    open var delegate:XYXSkimViewDelegate?
+    open var dataSource:XYXSkimViewDataSource?{
         didSet{
             reloadData()
         }
     }
     
-    var currentPageIndex:Int = 0{
+    open var currentPageIndex:Int = 0{
         didSet{
             configueCell(at: currentPageIndex)
         }
     }
 
-    var pagingEnabled = true{
+    open var pagingEnabled = true{
         didSet{
             scrollView.isPagingEnabled = pagingEnabled
         }
@@ -45,7 +45,7 @@ class XYXSkimView: UIView {
     fileprivate var reusedViews:[XYXSkimViewCell] = []
     fileprivate let defaultCellWidth:CGFloat = UIScreen.main.bounds.width
     
-    override var frame: CGRect{
+    override open var frame: CGRect{
         didSet{
             scrollView.frame = bounds
         }
@@ -56,12 +56,12 @@ class XYXSkimView: UIView {
         baseSetting()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         baseSetting()
     }
     
-    func baseSetting() {
+    fileprivate func baseSetting() {
         scrollView.frame = frame
         addSubview(scrollView)
         scrollView.isPagingEnabled = pagingEnabled
@@ -113,7 +113,7 @@ class XYXSkimView: UIView {
 
 }
 extension XYXSkimView:UIScrollViewDelegate{
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         delegate?.skimViewDidScroll(self, offsetX: scrollView.contentOffset.x)
         
         // 索引器
@@ -134,7 +134,6 @@ extension XYXSkimView:UIScrollViewDelegate{
         })
 
         for reduceItem in reduceVisibleViewModels {
-            print("被移除的view:\(reduceItem.address())(tag:\(reduceItem.tag))")
             reusedViews.append(reduceItem)
             reduceItem.removeFromSuperview()
         }
@@ -152,17 +151,6 @@ extension XYXSkimView:UIScrollViewDelegate{
             }
         }
 
-    }
-
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        
-        var rs:String = ""
-        let count = scrollView.subviews.count
-        for view in scrollView.subviews {
-            rs.append("\(view.address())(tag:\(view.tag)) - ")
-        }
-        rs.append("cell总数:\(count)")
-        print(rs)
     }
 }
 
@@ -189,10 +177,4 @@ extension XYXSkimView{
         }
     }
     
-}
-
-extension UIView{
-    func address() -> String {
-        return String.init(format: "%018p", unsafeBitCast(self, to: Int.self))
-    }
 }

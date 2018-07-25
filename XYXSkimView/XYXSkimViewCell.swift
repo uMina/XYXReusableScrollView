@@ -8,7 +8,7 @@
 
 import UIKit
 
-class XYXSkimViewCell: UIView {
+open class XYXSkimViewCell: UIView {
     
     @IBInspectable private var _reuseIdentifier:String?
     open var reuseIdentifier: String? {
@@ -21,12 +21,12 @@ class XYXSkimViewCell: UIView {
         self.init()
     }
     
-    required init(reuseIdentifier:String) {
+    required public init(reuseIdentifier:String) {
         super.init(frame: CGRect.zero)
         _reuseIdentifier = reuseIdentifier
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
 }
