@@ -22,14 +22,14 @@ Pod::Spec.new do |s|
   横向的、可复用的滚动视图。可以从xib文件或者纯代码构建cell。
                    DESC
 
-  s.homepage     = "https://github.com/uMina/XYXSkimView"
+  s.homepage     = "https://github.com/uMina/XYXSkimViewDemo"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author             = { "Teresa" => "yxx.umina@gmail.com" }
   s.platform     = :ios, "9.0"
-  s.source       = { :git => "https://github.com/uMina/XYXSkimView.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/uMina/XYXSkimViewDemo.git", :tag => "#{s.version}" }
   s.source_files  = "XYXSkimView", "XYXSkimView/*.swift"
   
 end
