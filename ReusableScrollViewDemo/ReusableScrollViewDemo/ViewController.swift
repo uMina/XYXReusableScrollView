@@ -29,6 +29,10 @@ class ViewController: UIViewController {
         //=------
         xibSkimView.register(DemoView.self, forCellReuseIdentifier: "DemoView")
         xibSkimView.dataSource = self
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+3, execute: {[unowned self] in
+            self.skimView.frame = CGRect(origin: CGPoint(x: 0, y: 20), size: self.skimView.frame.size)
+        })
     }
     
 }

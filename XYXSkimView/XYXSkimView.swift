@@ -106,7 +106,6 @@ open class XYXSkimView: UIView {
     
     //MARK: - Refresh UI
     open func reloadData() {
-        print("reloadData")
         configueCell(at: currentPageIndex)
     }
 
@@ -163,7 +162,6 @@ extension XYXSkimView{
         }
         scrollView.frame = bounds
         let cellCount = CGFloat(dataSource?.numberOfRows(in: self) ?? 0)
-        print("configureScrollView  一共有\(cellCount)页面")
         scrollView.contentSize = CGSize(width: scrollView.frame.width * cellCount, height: scrollView.frame.height)
         reloadData()
     }
