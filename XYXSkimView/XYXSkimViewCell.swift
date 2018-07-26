@@ -23,7 +23,7 @@ open class XYXSkimViewCell: UIView {
     
     required public init(reuseIdentifier:String) {
         super.init(frame: CGRect.zero)
-        _reuseIdentifier = reuseIdentifier
+        identifier = reuseIdentifier
     }
     
     required public init?(coder aDecoder: NSCoder) {
