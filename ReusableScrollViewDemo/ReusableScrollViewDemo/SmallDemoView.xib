@@ -37,7 +37,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <userDefinedRuntimeAttributes>
-                <userDefinedRuntimeAttribute type="string" keyPath="_reuseIdentifier" value="SmallDemoView"/>
+                <userDefinedRuntimeAttribute type="string" keyPath="identifier" value="SmallDemoView"/>
             </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="displayBtn" destination="Mtp-Cx-ZZr" id="tgz-Eo-7Hh"/>
