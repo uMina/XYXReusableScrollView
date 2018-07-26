@@ -62,7 +62,7 @@ open class XYXSkimView: UIView {
     }
     
     fileprivate func baseSetting() {
-        scrollView.frame = frame
+        scrollView.frame = bounds
         addSubview(scrollView)
         scrollView.isPagingEnabled = pagingEnabled
         scrollView.showsVerticalScrollIndicator = false
