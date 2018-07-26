@@ -12,7 +12,7 @@ import UIKit
 @objc public protocol XYXSkimViewDataSource {
     func numberOfRows(in skimView: XYXSkimView) -> Int
     func skimView(_ skimView: XYXSkimView, cellForRowAt index: Int) -> XYXSkimViewCell
-    @objc optional func skimView(_ skimView: XYXSkimView, widthForRow at:Int) -> Float
+
 }
 public protocol XYXSkimViewDelegate {
     func skimViewDidScroll(_ skimView:XYXSkimView,offsetX:CGFloat)
@@ -24,7 +24,7 @@ open class XYXSkimView: UIView {
     open var delegate:XYXSkimViewDelegate?
     open var dataSource:XYXSkimViewDataSource?{
         didSet{
-            reloadData()
+            configureScrollView()
         }
     }
     
@@ -45,11 +45,12 @@ open class XYXSkimView: UIView {
     fileprivate var reusedViews:[XYXSkimViewCell] = []
     fileprivate let defaultCellWidth:CGFloat = UIScreen.main.bounds.width
     
-    override open var frame: CGRect{
+    open override var bounds: CGRect{
         didSet{
-            scrollView.frame = bounds
+            configureScrollView()
         }
     }
+    
     //MARK: - Life Cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -62,7 +63,6 @@ open class XYXSkimView: UIView {
     }
     
     fileprivate func baseSetting() {
-        scrollView.frame = bounds
         addSubview(scrollView)
         scrollView.isPagingEnabled = pagingEnabled
         scrollView.showsVerticalScrollIndicator = false
@@ -106,12 +106,12 @@ open class XYXSkimView: UIView {
     
     //MARK: - Refresh UI
     open func reloadData() {
-        let cellCount = CGFloat(dataSource?.numberOfRows(in: self) ?? 0)
-        scrollView.contentSize = CGSize(width: scrollView.frame.width * cellCount, height: scrollView.frame.height)
+        print("reloadData")
         configueCell(at: currentPageIndex)
     }
 
 }
+
 extension XYXSkimView:UIScrollViewDelegate{
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         delegate?.skimViewDidScroll(self, offsetX: scrollView.contentOffset.x)
@@ -156,8 +156,19 @@ extension XYXSkimView:UIScrollViewDelegate{
 
 //MARK: - Private
 extension XYXSkimView{
+    
+    private func configureScrollView() {
+        for item in scrollView.subviews{
+            item.removeFromSuperview()
+        }
+        scrollView.frame = bounds
+        let cellCount = CGFloat(dataSource?.numberOfRows(in: self) ?? 0)
+        print("configureScrollView  一共有\(cellCount)页面")
+        scrollView.contentSize = CGSize(width: scrollView.frame.width * cellCount, height: scrollView.frame.height)
+        reloadData()
+    }
+    
     private func configueCell(at cellIndex:Int) {
-        
         if let skimCell = dataSource?.skimView(self, cellForRowAt: cellIndex) {
             
             //CellModel处理

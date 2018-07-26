@@ -18,9 +18,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         //=------
         skimView.frame = CGRect(x: 0, y: 100, width: UIScreen.main.bounds.width, height: 80)
+        skimView.dataSource = self
         view.addSubview(skimView)
         skimView.register(DemoView.self, forCellReuseIdentifier: "DemoView")
-        skimView.dataSource = self
         //=------
         smallSkimView.frame = CGRect(x: 0, y: 200, width: UIScreen.main.bounds.width, height: 80)
         view.addSubview(smallSkimView)
@@ -40,6 +40,7 @@ extension ViewController: XYXSkimViewDataSource {
     }
     
     func skimView(_ skimView: XYXSkimView, cellForRowAt index: Int) -> XYXSkimViewCell {
+        
         if skimView == self.skimView || skimView == self.xibSkimView{
             var cell = skimView.dequeueReusableCell(withIdentifier: "DemoView") as? DemoView
             if cell == nil{

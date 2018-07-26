@@ -34,16 +34,17 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Zjw-Up-rf4" secondAttribute="trailing" priority="995" constant="20" symbolic="YES" id="1EZ-FU-Hzz"/>
                             <constraint firstItem="xFF-WW-LnQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="IFj-uI-K1W"/>
                             <constraint firstItem="Zjw-Up-rf4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="WJ7-TW-X7h"/>
-                            <constraint firstItem="xFF-WW-LnQ" firstAttribute="top" secondItem="Zjw-Up-rf4" secondAttribute="bottom" constant="12" id="aMg-GR-xrZ"/>
+                            <constraint firstItem="xFF-WW-LnQ" firstAttribute="top" secondItem="Zjw-Up-rf4" secondAttribute="bottom" constant="12" id="iTr-FQ-ipr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xFF-WW-LnQ" secondAttribute="bottom" constant="34" id="mxG-vb-bRl"/>
                             <constraint firstItem="xFF-WW-LnQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zJv-fY-68p"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="xibSkimView" destination="xFF-WW-LnQ" id="pCC-Va-qbI"/>
+                        <outlet property="xibSkimView" destination="xFF-WW-LnQ" id="onK-PH-srq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
