@@ -10,9 +10,8 @@
 import UIKit
 
 @objc public protocol XYXSkimViewDataSource {
-    func numberOfRows(in skimView: XYXSkimView) -> Int
+    func numberOfPages(in skimView: XYXSkimView) -> Int
     func skimView(_ skimView: XYXSkimView, cellForRowAt index: Int) -> XYXSkimViewCell
-
 }
 public protocol XYXSkimViewDelegate {
     func skimViewDidScroll(_ skimView:XYXSkimView,offsetX:CGFloat)
@@ -52,7 +51,7 @@ open class XYXSkimView: UIView {
     }
     
     //MARK: - Life Cycle
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         baseSetting()
     }
@@ -116,7 +115,7 @@ extension XYXSkimView:UIScrollViewDelegate{
         delegate?.skimViewDidScroll(self, offsetX: scrollView.contentOffset.x)
         
         // 索引器
-        let cellCount = dataSource?.numberOfRows(in: self) ?? 0
+        let cellCount = dataSource?.numberOfPages(in: self) ?? 0
         let cellWidth = defaultCellWidth
         
         var firstIndex = Int(floor(scrollView.bounds.minX/cellWidth))
@@ -161,15 +160,16 @@ extension XYXSkimView{
             item.removeFromSuperview()
         }
         scrollView.frame = bounds
-        let cellCount = CGFloat(dataSource?.numberOfRows(in: self) ?? 0)
+        let cellCount = CGFloat(dataSource?.numberOfPages(in: self) ?? 0)
         scrollView.contentSize = CGSize(width: scrollView.frame.width * cellCount, height: scrollView.frame.height)
-        reloadData()
+        
+        configueCell(at: currentPageIndex)
     }
     
     private func configueCell(at cellIndex:Int) {
         if let skimCell = dataSource?.skimView(self, cellForRowAt: cellIndex) {
             
-            //CellModel处理
+            //复用池的处理
             if let index = reusedViews.index(where: { (cell) -> Bool in
                 return cell == skimCell
             }){
