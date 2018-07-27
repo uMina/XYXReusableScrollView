@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 class ViewController: UIViewController {
     
     let skimView = XYXSkimView()
