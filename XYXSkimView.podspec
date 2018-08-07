@@ -14,7 +14,6 @@ Pod::Spec.new do |s|
   s.author             = { "Teresa" => "yxx.umina@gmail.com" }
   s.platform     = :ios, "9.0"
   s.source       = { :git => "https://github.com/uMina/XYXSkimViewDemo.git", :tag => "#{s.version}" }
-  # s.source       = { :git => "/Users/Teresa/Documents/GitHub/XYXSkimView", :tag => "#{s.version}" }
   s.source_files  = "XYXSkimView", "XYXSkimView/*.swift"
 
 end
