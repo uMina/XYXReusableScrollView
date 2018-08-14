@@ -25,9 +25,11 @@ class ViewController: UIViewController {
         view.addSubview(smallSkimView)
         smallSkimView.register(UINib.init(nibName: "SmallDemoView", bundle: nil), forCellReuseIdentifier: "SmallDemoView")
         smallSkimView.dataSource = self
+        smallSkimView.scrollTo(page: 2, animated:true)
         //=------
         xibSkimView.register(DemoView.self, forCellReuseIdentifier: "DemoView")
         xibSkimView.dataSource = self
+        xibSkimView.scrollTo(page: 1)
         
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+3, execute: {[unowned self] in
             self.skimView.frame = CGRect(origin: CGPoint(x: 0, y: 20), size: self.skimView.frame.size)

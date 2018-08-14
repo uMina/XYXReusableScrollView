@@ -107,7 +107,15 @@ open class XYXSkimView: UIView {
     open func reloadData() {
         configueCell(at: currentPageIndex)
     }
-
+    
+    //MARK: - 滚动到指定的页面
+    open func scrollTo(page:Int, animated:Bool = false){
+        let newX = frame.width * CGFloat(page)
+        let newRect = CGRect(x: newX, y: bounds.minY, width: bounds.width, height: bounds.height)
+        scrollView.scrollRectToVisible(newRect, animated: animated)
+        currentPageIndex = page
+        reloadData()
+    }
 }
 
 extension XYXSkimView:UIScrollViewDelegate{
