@@ -168,10 +168,16 @@ extension XYXSkimView{
             item.removeFromSuperview()
         }
         scrollView.frame = bounds
-        let cellCount = CGFloat(dataSource?.numberOfPages(in: self) ?? 0)
-        scrollView.contentSize = CGSize(width: scrollView.frame.width * cellCount, height: scrollView.frame.height)
+
+        let cellCount = dataSource?.numberOfPages(in: self) ?? 0
+        scrollView.contentSize = CGSize(width: scrollView.frame.width * CGFloat(cellCount), height: scrollView.frame.height)
         
+        guard cellCount > currentPageIndex else {
+            return
+        }
+
         configueCell(at: currentPageIndex)
+        
     }
     
     private func configueCell(at cellIndex:Int) {
