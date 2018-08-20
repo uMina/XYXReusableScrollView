@@ -104,17 +104,34 @@ open class XYXSkimView: UIView {
     }
     
     //MARK: - Refresh UI
+    ///更新重构内容页并刷新页面数据
     open func reloadData() {
+        //更新contentView的宽度
+        let cellCount = CGFloat(dataSource?.numberOfPages(in: self) ?? 0)
+        scrollView.contentSize = CGSize(width: scrollView.frame.width * cellCount, height: scrollView.frame.height)
+        
+        //删除所有的可见cell
+        visibleViews.removeAll()
+        reusedViews.removeAll()
+        for item in scrollView.subviews {
+            item.removeFromSuperview()
+        }
+        //刷新
+        justReloadData()
+    }
+    ///刷新当前页面数据
+    open func justReloadData() {
         configueCell(at: currentPageIndex)
     }
     
     //MARK: - 滚动到指定的页面
+    ///滚动到某页并刷新
     open func scrollTo(page:Int, animated:Bool = false){
         let newX = frame.width * CGFloat(page)
         let newRect = CGRect(x: newX, y: bounds.minY, width: bounds.width, height: bounds.height)
         scrollView.scrollRectToVisible(newRect, animated: animated)
         currentPageIndex = page
-        reloadData()
+        justReloadData()
     }
 }
 
@@ -168,16 +185,13 @@ extension XYXSkimView{
             item.removeFromSuperview()
         }
         scrollView.frame = bounds
-
         let cellCount = dataSource?.numberOfPages(in: self) ?? 0
         scrollView.contentSize = CGSize(width: scrollView.frame.width * CGFloat(cellCount), height: scrollView.frame.height)
         
         guard cellCount > currentPageIndex else {
             return
         }
-
         configueCell(at: currentPageIndex)
-        
     }
     
     private func configueCell(at cellIndex:Int) {
