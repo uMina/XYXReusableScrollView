@@ -73,8 +73,8 @@ open class XYXSkimView: UIView {
     //MARK: - Reuse Method
     open func register(_ nib: UINib?, forCellReuseIdentifier identifier: String){
         if let cell = nib?.instantiate(withOwner: nil, options: nil).first as? XYXSkimViewCell{
-            let isIncluded = reusedViews.contains { (cell) -> Bool in
-                return cell.reuseIdentifier == identifier
+            let isIncluded = reusedViews.contains { (view) -> Bool in
+                return view.reuseIdentifier == identifier
             }
             if isIncluded == false{
                 reusedViews.append(cell)
@@ -85,7 +85,7 @@ open class XYXSkimView: UIView {
     open func register(_ cellClass: XYXSkimViewCell.Type, forCellReuseIdentifier identifier: String){
         let cell = cellClass.init(reuseIdentifier: identifier)
         let isIncluded = reusedViews.contains { (view) -> Bool in
-            return cell.reuseIdentifier == identifier
+            return view.reuseIdentifier == identifier
         }
         if isIncluded == false{
             reusedViews.append(cell)
