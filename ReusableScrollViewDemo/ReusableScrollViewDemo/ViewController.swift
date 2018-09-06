@@ -12,16 +12,18 @@ class ViewController: UIViewController {
     let skimView = XYXSkimView()
     let smallSkimView = XYXSkimView()
     @IBOutlet weak var xibSkimView: XYXSkimView!
+    @IBOutlet weak var specialSkimView: XYXSkimView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //=------
-        skimView.frame = CGRect(x: 0, y: 100, width: UIScreen.main.bounds.width, height: 80)
+        skimView.frame = CGRect(x: 0, y: 40, width: UIScreen.main.bounds.width, height: 80)
         skimView.dataSource = self
         view.addSubview(skimView)
         skimView.register(DemoView.self, forCellReuseIdentifier: "DemoView")
+
         //=------
-        smallSkimView.frame = CGRect(x: 0, y: 200, width: UIScreen.main.bounds.width, height: 80)
+        smallSkimView.frame = CGRect(x: 0, y: 150, width: UIScreen.main.bounds.width, height: 80)
         view.addSubview(smallSkimView)
         smallSkimView.register(UINib.init(nibName: "SmallDemoView", bundle: nil), forCellReuseIdentifier: "SmallDemoView")
         smallSkimView.dataSource = self
@@ -30,10 +32,13 @@ class ViewController: UIViewController {
         xibSkimView.register(DemoView.self, forCellReuseIdentifier: "DemoView")
         xibSkimView.dataSource = self
         xibSkimView.scrollTo(page: 1)
-        
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+3, execute: {[unowned self] in
-            self.skimView.frame = CGRect(origin: CGPoint(x: 0, y: 20), size: self.skimView.frame.size)
-        })
+
+        //=------
+        specialSkimView.register(DemoView.self, forCellReuseIdentifier: "DemoView")
+        specialSkimView.register(UINib.init(nibName: "SmallDemoView", bundle: nil), forCellReuseIdentifier: "SmallDemoView")
+        specialSkimView.dataSource = self
+        specialSkimView.scrollTo(page: 1)
+
     }
     
 }
@@ -41,7 +46,14 @@ class ViewController: UIViewController {
 extension ViewController: XYXSkimViewDataSource {
     
     func numberOfPages(in skimView: XYXSkimView) -> Int {
-        return 5
+        switch skimView {
+        case self.smallSkimView:
+            return 5
+        case self.specialSkimView:
+            return 7
+        default:
+            return 4
+        }
     }
     
     func skimView(_ skimView: XYXSkimView, cellForRowAt index: Int) -> XYXSkimViewCell {
@@ -60,6 +72,25 @@ extension ViewController: XYXSkimViewDataSource {
             }
             cell?.flag = index
             return cell ?? XYXSkimViewCell()
+        }
+        
+        else if skimView == self.specialSkimView {
+            if index == 3 {
+                var cell = skimView.dequeueReusableCell(withIdentifier: "DemoView") as? DemoView
+                if cell == nil{
+                    cell = DemoView.init(reuseIdentifier: "DemoView")
+                }
+                cell?.flag = index
+                return cell!
+            }else{
+                var cell = skimView.dequeueReusableCell(withIdentifier: "SmallDemoView") as? SmallDemoView
+                if cell == nil{
+                    cell = Bundle.main.loadNibNamed("SmallDemoView", owner: nil, options: nil)?.last as? SmallDemoView
+                }
+                cell?.flag = index
+                return cell!
+            }
+            
         }
         return XYXSkimViewCell()
     }

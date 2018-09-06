@@ -93,7 +93,6 @@ open class XYXSkimView: UIView {
     }
     
     open func dequeueReusableCell(withIdentifier identifier: String) -> UIView?{
-
         if let index = reusedViews.index(where: { (model) -> Bool in
             return model.reuseIdentifier == identifier
         }){

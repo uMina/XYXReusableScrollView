@@ -19,37 +19,75 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xFF-WW-LnQ" customClass="XYXSkimView" customModule="ReusableScrollViewDemo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="505" width="375" height="128"/>
+                                <rect key="frame" x="0.0" y="266" width="375" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="CxT-77-vaE"/>
+                                    <constraint firstAttribute="height" constant="128" id="p0b-y7-U7b"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="从Xib初始化" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zjw-Up-rf4">
-                                <rect key="frame" x="16" y="476" width="79" height="17"/>
+                                <rect key="frame" x="16" y="244" width="79" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="从Xib初始化，含不同种类的Cell的实现" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QIL-Jh-Ru8">
+                                <rect key="frame" x="16" y="399" width="246" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="从代码初始化" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhY-TN-zPG">
+                                <rect key="frame" x="16" y="20" width="86" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="从代码初始化" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qER-DY-CwD">
+                                <rect key="frame" x="16" y="127" width="86" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mLY-Ta-9kv" customClass="XYXSkimView" customModule="ReusableScrollViewDemo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="416" width="375" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="cma-2n-0jZ"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Zjw-Up-rf4" secondAttribute="trailing" priority="995" constant="20" symbolic="YES" id="1EZ-FU-Hzz"/>
-                            <constraint firstItem="xFF-WW-LnQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="IFj-uI-K1W"/>
-                            <constraint firstItem="Zjw-Up-rf4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="WJ7-TW-X7h"/>
-                            <constraint firstItem="xFF-WW-LnQ" firstAttribute="top" secondItem="Zjw-Up-rf4" secondAttribute="bottom" constant="12" id="iTr-FQ-ipr"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xFF-WW-LnQ" secondAttribute="bottom" constant="34" id="mxG-vb-bRl"/>
-                            <constraint firstItem="xFF-WW-LnQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zJv-fY-68p"/>
+                            <constraint firstItem="xFF-WW-LnQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3tk-Hv-snI"/>
+                            <constraint firstItem="Zjw-Up-rf4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="5lZ-my-wuw"/>
+                            <constraint firstItem="mLY-Ta-9kv" firstAttribute="top" secondItem="QIL-Jh-Ru8" secondAttribute="bottom" id="8wM-gn-5Ns"/>
+                            <constraint firstItem="Zjw-Up-rf4" firstAttribute="top" secondItem="qER-DY-CwD" secondAttribute="bottom" constant="100" id="JS9-7T-A8w"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="QIL-Jh-Ru8" secondAttribute="trailing" priority="999" constant="20" symbolic="YES" id="PjJ-WQ-Sfa"/>
+                            <constraint firstItem="QIL-Jh-Ru8" firstAttribute="top" secondItem="xFF-WW-LnQ" secondAttribute="bottom" constant="5" id="SC8-qt-fLE"/>
+                            <constraint firstItem="hhY-TN-zPG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Slf-nD-bbl"/>
+                            <constraint firstItem="xFF-WW-LnQ" firstAttribute="top" secondItem="Zjw-Up-rf4" secondAttribute="bottom" constant="5" id="Suw-ch-2zg"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hhY-TN-zPG" secondAttribute="trailing" priority="999" constant="20" symbolic="YES" id="YQS-vc-io8"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qER-DY-CwD" secondAttribute="trailing" priority="999" constant="20" symbolic="YES" id="aKL-OS-qX2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mLY-Ta-9kv" secondAttribute="trailing" id="bjR-6k-zof"/>
+                            <constraint firstItem="qER-DY-CwD" firstAttribute="top" secondItem="hhY-TN-zPG" secondAttribute="bottom" constant="90" id="ddX-wB-M8e"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Zjw-Up-rf4" secondAttribute="trailing" priority="999" constant="20" symbolic="YES" id="en4-dh-oeB"/>
+                            <constraint firstItem="QIL-Jh-Ru8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="f50-Y7-zZp"/>
+                            <constraint firstItem="qER-DY-CwD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="snE-Nf-i9H"/>
+                            <constraint firstItem="mLY-Ta-9kv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="t1l-ty-JaU"/>
+                            <constraint firstItem="hhY-TN-zPG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="uLk-8z-28h"/>
+                            <constraint firstItem="xFF-WW-LnQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="z23-lK-WYc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="xibSkimView" destination="xFF-WW-LnQ" id="onK-PH-srq"/>
+                        <outlet property="specialSkimView" destination="mLY-Ta-9kv" id="pxX-wh-i7X"/>
+                        <outlet property="xibSkimView" destination="xFF-WW-LnQ" id="sh1-rp-nog"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117.59999999999999" y="117.39130434782609"/>
+            <point key="canvasLocation" x="-132" y="149"/>
         </scene>
     </scenes>
 </document>
