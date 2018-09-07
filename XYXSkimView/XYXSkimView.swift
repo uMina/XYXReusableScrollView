@@ -110,11 +110,18 @@ open class XYXSkimView: UIView {
         scrollView.contentSize = CGSize(width: scrollView.frame.width * cellCount, height: scrollView.frame.height)
         
         //删除所有的可见cell
-        visibleViews.removeAll()
-        reusedViews.removeAll()
         for item in scrollView.subviews {
             item.removeFromSuperview()
         }
+        for item in visibleViews {
+            let isContains = reusedViews.contains(where: { (model) -> Bool in
+                return item.reuseIdentifier == model.reuseIdentifier
+            })
+            if isContains == false{
+                reusedViews.append(item)
+            }
+        }
+        visibleViews.removeAll()
         //刷新
         justReloadData()
     }
@@ -183,6 +190,16 @@ extension XYXSkimView{
         for item in scrollView.subviews{
             item.removeFromSuperview()
         }
+        for item in visibleViews {
+            let isContains = reusedViews.contains(where: { (model) -> Bool in
+                return item.reuseIdentifier == model.reuseIdentifier
+            })
+            if isContains == false{
+                reusedViews.append(item)
+            }
+        }
+        visibleViews.removeAll()
+        
         scrollView.frame = bounds
         let cellCount = dataSource?.numberOfPages(in: self) ?? 0
         scrollView.contentSize = CGSize(width: scrollView.frame.width * CGFloat(cellCount), height: scrollView.frame.height)

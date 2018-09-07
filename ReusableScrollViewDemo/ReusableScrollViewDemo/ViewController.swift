@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var xibSkimView: XYXSkimView!
     @IBOutlet weak var specialSkimView: XYXSkimView!
     
+    let specialCount:Int = 3
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //=------
@@ -48,9 +50,9 @@ extension ViewController: XYXSkimViewDataSource {
     func numberOfPages(in skimView: XYXSkimView) -> Int {
         switch skimView {
         case self.smallSkimView:
-            return 5
-        case self.specialSkimView:
             return 7
+        case self.specialSkimView:
+            return specialCount
         default:
             return 4
         }
@@ -73,9 +75,9 @@ extension ViewController: XYXSkimViewDataSource {
             cell?.flag = index
             return cell ?? XYXSkimViewCell()
         }
-        
         else if skimView == self.specialSkimView {
-            if index == 3 {
+            
+            if index == specialCount - 1 {
                 var cell = skimView.dequeueReusableCell(withIdentifier: "DemoView") as? DemoView
                 if cell == nil{
                     cell = DemoView.init(reuseIdentifier: "DemoView")
