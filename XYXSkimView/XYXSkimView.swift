@@ -181,6 +181,11 @@ extension XYXSkimView:UIScrollViewDelegate{
         }
 
     }
+
+    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        currentPageIndex = Int(scrollView.contentOffset.x / UIScreen.main.bounds.width)
+    }
+
 }
 
 //MARK: - Private
