@@ -27,9 +27,10 @@ open class XYXSkimView: UIView {
         }
     }
     
-    open var currentPageIndex:Int = 0{
-        didSet{
-            configueCell(at: currentPageIndex)
+    private var _currentPageIndex:Int = 0
+    open var currentPageIndex:Int{
+        get{
+            return _currentPageIndex
         }
     }
 
@@ -42,6 +43,7 @@ open class XYXSkimView: UIView {
     fileprivate let scrollView = UIScrollView()
     fileprivate var visibleViews:[XYXSkimViewCell] = []
     fileprivate var reusedViews:[XYXSkimViewCell] = []
+    
     fileprivate let defaultCellWidth:CGFloat = UIScreen.main.bounds.width
     
     open override var bounds: CGRect{
@@ -127,7 +129,14 @@ open class XYXSkimView: UIView {
     }
     ///刷新当前页面数据
     open func justReloadData() {
-        configueCell(at: currentPageIndex)
+        //删除原有的cell
+        for item in scrollView.subviews{
+            if item.frame.minX == scrollView.contentOffset.x{
+                item.removeFromSuperview()
+            }
+        }
+        //重新加载cell
+        configueCell(at: _currentPageIndex)
     }
     
     //MARK: - 滚动到指定的页面
@@ -136,8 +145,7 @@ open class XYXSkimView: UIView {
         let newX = frame.width * CGFloat(page)
         let newRect = CGRect(x: newX, y: bounds.minY, width: bounds.width, height: bounds.height)
         scrollView.scrollRectToVisible(newRect, animated: animated)
-        currentPageIndex = page
-        justReloadData()
+        _currentPageIndex = page
     }
 }
 
@@ -183,7 +191,7 @@ extension XYXSkimView:UIScrollViewDelegate{
     }
 
     public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        currentPageIndex = Int(scrollView.contentOffset.x / UIScreen.main.bounds.width)
+        _currentPageIndex = Int(scrollView.contentOffset.x / UIScreen.main.bounds.width)
     }
 
 }
@@ -209,15 +217,14 @@ extension XYXSkimView{
         let cellCount = dataSource?.numberOfPages(in: self) ?? 0
         scrollView.contentSize = CGSize(width: scrollView.frame.width * CGFloat(cellCount), height: scrollView.frame.height)
         
-        guard cellCount > currentPageIndex else {
+        guard cellCount > _currentPageIndex else {
             return
         }
-        configueCell(at: currentPageIndex)
+        configueCell(at: _currentPageIndex)
     }
     
     private func configueCell(at cellIndex:Int) {
         if let skimCell = dataSource?.skimView(self, cellForRowAt: cellIndex) {
-            
             //复用池的处理
             if let index = reusedViews.index(where: { (cell) -> Bool in
                 return cell == skimCell
@@ -232,6 +239,7 @@ extension XYXSkimView{
             skimCell.frame = newFrame
             skimCell.tag = cellIndex
             scrollView.addSubview(skimCell)
+            
         }
     }
     
